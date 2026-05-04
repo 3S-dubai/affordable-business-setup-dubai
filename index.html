@@ -10,7 +10,7 @@
   :root {
     --gold: #A79D80; --gold-dark: #8a8066; --navy: #061b38; --blue: #2d5275;
     --black: #000000; --body: #5F5F5F; --light: #f6f6f6; --border: #EEEEEE; --white: #ffffff;
-    --green: #25D366; --amber: #A79D80;
+    --green: #25D366;
     --font-main: 'Plus Jakarta Sans', sans-serif; --font-heading: 'Space Grotesk', sans-serif;
   }
   html { scroll-behavior: smooth; }
@@ -29,12 +29,14 @@
   .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 420px; gap: 64px; align-items: center; position: relative; z-index: 2; }
 
   .price-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(167,157,128,0.15); border: 1px solid rgba(167,157,128,0.4); color: var(--gold); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 8px 18px; border-radius: 3px; margin-bottom: 24px; animation: fadeUp 0.6s ease both; }
-
   .hero h1 { font-family: var(--font-heading); font-size: clamp(34px, 5vw, 58px); font-weight: 700; line-height: 1.1; color: var(--white); margin-bottom: 20px; animation: fadeUp 0.7s ease 0.1s both; }
   .hero h1 .price-highlight { color: var(--gold); font-size: 1.1em; }
-
   .hero-lead { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 36px; max-width: 520px; animation: fadeUp 0.7s ease 0.2s both; }
   .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeUp 0.7s ease 0.3s both; }
+
+  /* URGENCY BANNER */
+  .urgency-banner { display: inline-flex; align-items: center; gap: 8px; background: rgba(167,157,128,0.12); border: 1px solid rgba(167,157,128,0.3); color: rgba(255,255,255,0.85); font-size: 13px; font-weight: 500; padding: 7px 16px; border-radius: 4px; margin-top: 18px; animation: fadeUp 0.7s ease 0.35s both; }
+  .urgency-banner strong { color: var(--gold); }
 
   /* PRICE PILLS */
   .price-pills { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; animation: fadeUp 0.7s ease 0.4s both; }
@@ -91,19 +93,15 @@
   .section-title { font-family: var(--font-heading); font-size: clamp(26px, 3.5vw, 40px); font-weight: 700; color: var(--black); line-height: 1.2; margin-bottom: 14px; }
   .section-sub { font-size: 16px; color: var(--body); max-width: 540px; line-height: 1.8; }
 
-  /* PRICING COMPARISON */
-  .compare-table { width: 100%; border-collapse: collapse; margin-top: 48px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
-  .compare-table th { background: var(--navy); color: var(--white); font-family: var(--font-heading); font-size: 14px; font-weight: 600; padding: 18px 20px; text-align: left; }
-  .compare-table th.highlight-col { background: var(--gold); color: var(--white); }
-  .compare-table td { padding: 16px 20px; font-size: 14px; border-bottom: 1px solid var(--border); background: var(--white); }
-  .compare-table td.highlight-col { background: rgba(167,157,128,0.05); font-weight: 600; color: var(--black); }
-  .compare-table tr:last-child td { border-bottom: none; }
-  .compare-table .check { color: #16a34a; font-weight: 700; }
-  .compare-table .cross { color: #dc2626; }
-  .compare-table .price-cell { font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: var(--gold); }
+  /* FREEZONE SPOTLIGHT */
+  .freezone-spotlight { background: rgba(167,157,128,0.06); border: 1px solid rgba(167,157,128,0.25); border-radius: 12px; padding: 28px 32px; margin-top: 40px; }
+  .fz-body h4 { font-family: var(--font-heading); font-size: 17px; font-weight: 700; color: var(--black); margin-bottom: 8px; }
+  .fz-body p { font-size: 14px; color: var(--body); line-height: 1.7; margin-bottom: 14px; }
+  .fz-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .fz-tag { background: var(--navy); color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 4px 12px; border-radius: 3px; }
 
   /* PRICING CARDS */
-  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
   .pricing-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 32px 28px; text-align: center; position: relative; transition: all 0.3s ease; }
   .pricing-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.08); transform: translateY(-3px); }
   .pricing-card.featured { border-color: var(--gold); box-shadow: 0 8px 30px rgba(167,157,128,0.2); }
@@ -119,9 +117,34 @@
   .included-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; }
   .included-item { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 24px 20px; text-align: center; transition: all 0.3s ease; }
   .included-item:hover { border-color: var(--gold); box-shadow: 0 8px 24px rgba(0,0,0,0.07); }
-  .included-icon { font-size: 28px; margin-bottom: 12px; }
   .included-item h4 { font-family: var(--font-heading); font-size: 14px; font-weight: 700; color: var(--black); margin-bottom: 6px; }
   .included-item p { font-size: 12px; color: var(--body); line-height: 1.6; }
+
+  /* TESTIMONIALS */
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+  .testimonial-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; position: relative; transition: all 0.3s ease; }
+  .testimonial-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.07); border-color: rgba(167,157,128,0.3); }
+  .testimonial-badge { position: absolute; top: 20px; right: 20px; background: var(--light); border-radius: 4px; padding: 3px 8px; font-size: 10px; font-weight: 700; letter-spacing: 1px; color: var(--body); text-transform: uppercase; }
+  .testimonial-stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; margin-bottom: 14px; }
+  .testimonial-text { font-size: 14px; color: var(--body); line-height: 1.8; margin-bottom: 20px; font-style: italic; }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .testimonial-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 15px; font-weight: 700; color: var(--gold); flex-shrink: 0; }
+  .testimonial-name { font-family: var(--font-heading); font-size: 14px; font-weight: 700; color: var(--black); }
+  .testimonial-detail { font-size: 12px; color: #aaa; }
+
+  /* COMPARISON TABLE */
+  .compare-table { width: 100%; border-collapse: collapse; margin-top: 48px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
+  .compare-table th { background: var(--navy); color: var(--white); font-family: var(--font-heading); font-size: 14px; font-weight: 600; padding: 18px 20px; text-align: left; }
+  .compare-table th.highlight-col { background: var(--gold); color: var(--white); }
+  .compare-table td { padding: 16px 20px; font-size: 14px; border-bottom: 1px solid var(--border); background: var(--white); }
+  .compare-table td.highlight-col { background: rgba(167,157,128,0.05); font-weight: 600; color: var(--black); }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table .check { color: #16a34a; font-weight: 700; }
+  .compare-table .cross { color: #dc2626; }
+  .compare-table .price-cell { font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: var(--gold); }
+
+  /* SECTION TITLE SIZES */
+  .section-title-sm { font-family: var(--font-heading); font-size: clamp(20px, 2.5vw, 28px); font-weight: 700; color: var(--black); line-height: 1.2; margin-bottom: 10px; }
 
   /* FAQ */
   .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 48px; }
@@ -144,15 +167,16 @@
 
   @media (max-width: 900px) {
     .hero-inner { grid-template-columns: 1fr; }
-    .pricing-grid, .included-grid { grid-template-columns: 1fr 1fr; }
+    .pricing-grid, .included-grid, .testimonials-grid { grid-template-columns: 1fr 1fr; }
     .faq-grid { grid-template-columns: 1fr; }
     .hero, section { padding: 60px 20px; }
     .topbar { padding: 14px 20px; }
     .price-pills { flex-direction: column; }
     .compare-table { font-size: 12px; }
+    .freezone-spotlight { flex-direction: column; }
   }
   @media (max-width: 480px) {
-    .pricing-grid, .included-grid { grid-template-columns: 1fr; }
+    .pricing-grid, .included-grid, .testimonials-grid { grid-template-columns: 1fr; }
     .final-btns, .hero-btns { flex-direction: column; align-items: flex-start; }
   }
 </style>
@@ -161,18 +185,21 @@
 
 <nav class="topbar">
   <img src="https://3sbusinessme.com/wp-content/uploads/2024/05/Untitled-design-91-e1769077545447.png" alt="3S Business Services">
-  <a href="https://wa.me/971565876341?text=Hi%2C%20I%20want%20affordable%20business%20setup%20in%20Dubai" class="topbar-cta" target="_blank">💰 Get a Free Quote</a>
+  <a href="https://wa.me/971565876341?text=Hi%2C%20I%20want%20affordable%20business%20setup%20in%20Dubai" class="topbar-cta" target="_blank">Get a Free Quote</a>
 </nav>
 
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-left">
-      <div class="price-badge">💰 Lowest Cost Setup in Dubai</div>
-      <h1>Start Your Dubai Business<br>from <span class="price-highlight">AED 4,999</span><br>— All Inclusive</h1>
-      <p class="hero-lead">No hidden fees. No surprise charges. You see the full cost before you commit — and we stick to it. Quality service does not have to cost a fortune.</p>
+      <div class="price-badge">Lowest Cost Setup in Dubai</div>
+      <h1>Start Your Dubai Business<br>from <span class="price-highlight">AED 4,999</span><br>- All Inclusive</h1>
+      <p class="hero-lead">No hidden fees. No surprise charges. You see the full cost before you commit - and we stick to it. Quality service does not have to cost a fortune.</p>
       <div class="hero-btns">
-        <a href="https://wa.me/971565876341?text=Hi%2C%20I%20want%20affordable%20business%20setup%20in%20Dubai" class="btn-amber" target="_blank">💰 Get My Free Quote</a>
+        <a href="https://wa.me/971565876341?text=Hi%2C%20I%20want%20affordable%20business%20setup%20in%20Dubai" class="btn-gold-price" target="_blank">Get My Free Quote</a>
         <a href="#contact" class="btn-outline">See Full Pricing</a>
+      </div>
+      <div class="urgency-banner">
+        <strong>May 2026 pricing is locked.</strong> Rates valid until 31 May - request your quote before they update.
       </div>
       <div class="price-pills">
         <div class="price-pill"><div class="pp-type">Freezone</div><div class="pp-price">AED 4,999+</div></div>
@@ -185,10 +212,11 @@
       <div class="card-price-banner">
         <div class="banner-label">Starting From</div>
         <div class="banner-price">AED 4,999</div>
-        <div class="banner-note">All inclusive — no hidden fees</div>
+        <div class="banner-note">All inclusive - no hidden fees</div>
       </div>
       <h3>Get Your Free Cost Breakdown</h3>
-      <p>Tell us about your business and we will send you a full quote — no guessing, no surprises.</p>
+      <p>Tell us about your business and we will send you a full quote - no guessing, no surprises.</p>
+      <!-- TODO: Replace mailto action with WordPress Contact Form 7 or Formidable Forms shortcode after upload to WP -->
       <form action="mailto:seo@3sbusinessme.com" method="POST" enctype="text/plain">
         <div class="form-group"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required></div>
         <div class="form-group"><label>Phone / WhatsApp</label><input type="tel" name="phone" placeholder="+971 XX XXX XXXX" required></div>
@@ -197,16 +225,16 @@
           <label>Setup Type</label>
           <select name="setup_type">
             <option value="">Select an option</option>
-            <option>Freezone — from AED 4,999</option>
-            <option>Mainland — from AED 15,000</option>
-            <option>Offshore — from AED 12,000</option>
-            <option>Not sure — help me choose</option>
+            <option>Freezone - from AED 4,999</option>
+            <option>Mainland - from AED 15,000</option>
+            <option>Offshore - from AED 12,000</option>
+            <option>Not sure - help me choose</option>
           </select>
         </div>
-        <button type="submit" class="form-submit">Get My Free Quote →</button>
+        <button type="submit" class="form-submit">Get My Free Quote &rarr;</button>
       </form>
       <div class="form-divider">or chat with us directly</div>
-      <a href="https://wa.me/971565876341?text=Hi%2C%20I%20want%20affordable%20business%20setup%20in%20Dubai" class="btn-wa" target="_blank">💬 WhatsApp — Instant Response</a>
+      <a href="https://wa.me/971565876341?text=Hi%2C%20I%20want%20affordable%20business%20setup%20in%20Dubai" class="btn-wa" target="_blank">WhatsApp - Typically replies within 1 hour</a>
     </div>
   </div>
 </section>
@@ -214,7 +242,7 @@
 <div class="trust-bar">
   <div class="trust-inner">
     <div class="trust-item"><span class="dot"></span> Starting from AED 4,999</div>
-    <div class="trust-item"><span class="dot"></span> No Hidden Fees — Ever</div>
+    <div class="trust-item"><span class="dot"></span> No Hidden Fees - Ever</div>
     <div class="trust-item"><span class="dot"></span> Full Cost Shown Upfront</div>
     <div class="trust-item"><span class="dot"></span> 500+ Businesses Launched</div>
     <div class="trust-item"><span class="dot"></span> 100% Foreign Ownership</div>
@@ -239,13 +267,28 @@
   <div class="container">
     <span class="section-label">Full Pricing</span>
     <h2 class="section-title">Clear Costs. No Surprises.</h2>
-    <p class="section-sub">Here is exactly what you pay. We show you the full breakdown before you commit — not after.</p>
+    <p class="section-sub">Here is exactly what you pay. We show you the full breakdown before you commit - not after.</p>
+
+    <div class="freezone-spotlight">
+      <div class="fz-body">
+        <h4>Recommended Freezone at AED 4,999 - Meydan Free Zone, Dubai</h4>
+        <p>Meydan is one of the most cost-effective Dubai-address freezones available in 2026, located minutes from Downtown and Business Bay. At AED 4,999 through 3S, you get a trade license, 100% foreign ownership, and a legitimate Dubai business address - with no requirement to visit in person. Ideal for consultants, e-commerce businesses, and service providers who want the lowest-cost legitimate Dubai setup on the market.</p>
+        <div class="fz-tags">
+          <span class="fz-tag">Dubai Address</span>
+          <span class="fz-tag">100% Ownership</span>
+          <span class="fz-tag">Ready in 5 Days</span>
+          <span class="fz-tag">Remote Setup</span>
+          <span class="fz-tag">No Physical Office Required</span>
+        </div>
+      </div>
+    </div>
+
     <div class="pricing-grid">
       <div class="pricing-card featured">
         <div class="featured-tag">Best Value</div>
         <h3>Freezone</h3>
         <div class="price">AED 4,999+</div>
-        <div class="price-note">All inclusive — first year</div>
+        <div class="price-note">All inclusive - first year</div>
         <ul class="pricing-features">
           <li>Trade license included</li>
           <li>100% foreign ownership</li>
@@ -254,26 +297,24 @@
           <li>Visa eligibility included</li>
           <li>No hidden government fees</li>
         </ul>
-        <a href="https://wa.me/971565876341?text=Freezone%20affordable%20setup%20inquiry" class="btn-blue" target="_blank">Get My Quote</a>
       </div>
       <div class="pricing-card">
         <h3>Mainland</h3>
         <div class="price">AED 15K+</div>
-        <div class="price-note">Full mainland license — first year</div>
+        <div class="price-note">Full mainland license - first year</div>
         <ul class="pricing-features">
           <li>DET trade license</li>
           <li>Full UAE market access</li>
           <li>Government contract eligible</li>
-          <li>Setup in 2 to 3 weeks</li>
+          <li>Setup in 2-3 weeks</li>
           <li>PRO services included</li>
           <li>No hidden government fees</li>
         </ul>
-        <a href="https://wa.me/971565876341?text=Mainland%20affordable%20setup%20inquiry" class="btn-blue" target="_blank">Get My Quote</a>
       </div>
       <div class="pricing-card">
         <h3>Offshore</h3>
         <div class="price">AED 12K+</div>
-        <div class="price-note">Offshore company — first year</div>
+        <div class="price-note">Offshore company - first year</div>
         <ul class="pricing-features">
           <li>Asset and IP protection</li>
           <li>International trading</li>
@@ -282,7 +323,6 @@
           <li>Lowest ongoing cost</li>
           <li>No hidden government fees</li>
         </ul>
-        <a href="https://wa.me/971565876341?text=Offshore%20affordable%20setup%20inquiry" class="btn-blue" target="_blank">Get My Quote</a>
       </div>
     </div>
   </div>
@@ -291,25 +331,71 @@
 <section style="background: var(--light);">
   <div class="container">
     <span class="section-label">What is Included</span>
-    <h2 class="section-title">Everything You Need — Nothing You Don't</h2>
+    <h2 class="section-title-sm">Everything You Need - Nothing You Don't</h2>
     <p class="section-sub">Our packages are built to cover all the essentials. No upsells, no surprises mid-way.</p>
     <div class="included-grid">
-      <div class="included-item"><div class="included-icon">📄</div><h4>Trade License</h4><p>Official UAE trade license issued by the relevant authority for your chosen activity.</p></div>
-      <div class="included-item"><div class="included-icon">🏛️</div><h4>Government Registration</h4><p>Full registration with the relevant UAE government authority handled by our team.</p></div>
-      <div class="included-item"><div class="included-icon">🪪</div><h4>Establishment Card</h4><p>The establishment card required to process visas and open corporate bank accounts.</p></div>
-      <div class="included-item"><div class="included-icon">🤝</div><h4>PRO Services</h4><p>Government liaison services so you never have to stand in a queue or chase an office.</p></div>
-      <div class="included-item"><div class="included-icon">📋</div><h4>Trade Name Approval</h4><p>We reserve and approve your company name with the relevant authority.</p></div>
-      <div class="included-item"><div class="included-icon">📞</div><h4>Dedicated Consultant</h4><p>One point of contact from start to finish. No being passed around between teams.</p></div>
-      <div class="included-item"><div class="included-icon">🌐</div><h4>Remote Setup</h4><p>Everything handled online wherever you are. No need to fly into Dubai to get started.</p></div>
-      <div class="included-item"><div class="included-icon">✅</div><h4>Post-Setup Guidance</h4><p>Advice on bank account opening, visa applications, and next steps after your license is issued.</p></div>
+      <div class="included-item"><h4>Trade License</h4><p>Official UAE trade license issued by the relevant authority for your chosen activity.</p></div>
+      <div class="included-item"><h4>Government Registration</h4><p>Full registration with the relevant UAE government authority handled by our team.</p></div>
+      <div class="included-item"><h4>Establishment Card</h4><p>The establishment card required to process visas and open corporate bank accounts.</p></div>
+      <div class="included-item"><h4>PRO Services</h4><p>Government liaison services so you never have to stand in a queue or chase an office.</p></div>
+      <div class="included-item"><h4>Trade Name Approval</h4><p>We reserve and approve your company name with the relevant authority.</p></div>
+      <div class="included-item"><h4>Dedicated Consultant</h4><p>One point of contact from start to finish. No being passed around between teams.</p></div>
+      <div class="included-item"><h4>Remote Setup</h4><p>Everything handled online wherever you are. No need to fly into Dubai to get started.</p></div>
+      <div class="included-item"><h4>Post-Setup Guidance</h4><p>Advice on bank account opening, visa applications, and next steps after your license is issued.</p></div>
     </div>
   </div>
 </section>
 
 <section style="background: var(--white);">
   <div class="container">
+    <span class="section-label">Client Testimonials</span>
+    <h2 class="section-title-sm">Real Businesses. Real Results.</h2>
+    <p class="section-sub">Entrepreneurs across the UAE trusted 3S to get their business started at a price that made sense.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <span class="testimonial-badge">Freezone</span>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">"I had quotes from three other consultancies - all above AED 12,000. 3S came in at AED 4,999 with nothing hidden. My Meydan license was ready in four days. Genuinely impressed."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">RA</div>
+          <div>
+            <div class="testimonial-name">Rajan A.</div>
+            <div class="testimonial-detail">Digital Consultant &#183; Dubai</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <span class="testimonial-badge">Mainland</span>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">"The full breakdown was shared before I paid a single dirham. No surprises, no phone calls chasing approvals - the consultant handled everything end to end. Complete in under three weeks."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SM</div>
+          <div>
+            <div class="testimonial-name">Sara M.</div>
+            <div class="testimonial-detail">Trading Company &#183; Sharjah</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <span class="testimonial-badge">Freezone</span>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">"Set up remotely from India. Everything was done on WhatsApp and email - I never had to visit Dubai once. My license arrived faster than expected. Highly recommend 3S for anyone starting out."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">PK</div>
+          <div>
+            <div class="testimonial-name">Priya K.</div>
+            <div class="testimonial-detail">E-commerce Business &#183; Remote</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--light);">
+  <div class="container">
     <span class="section-label">How We Compare</span>
-    <h2 class="section-title">Why Choose 3S Over Other Providers</h2>
+    <h2 class="section-title-sm">Why Choose 3S Over Other Providers</h2>
     <p class="section-sub">Not all business setup companies are the same. Here is what sets 3S apart.</p>
     <table class="compare-table">
       <thead>
@@ -320,29 +406,33 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>Starting Price</td><td class="highlight-col price-cell">AED 4,999</td><td>AED 8,000+</td></tr>
-        <tr><td>Hidden Fees</td><td class="highlight-col"><span class="check">✓ None — ever</span></td><td><span class="cross">✗ Often added later</span></td></tr>
-        <tr><td>Dedicated Consultant</td><td class="highlight-col"><span class="check">✓ One person, start to finish</span></td><td><span class="cross">✗ Rotated between agents</span></td></tr>
-        <tr><td>Processing Time</td><td class="highlight-col"><span class="check">✓ 5 working days</span></td><td>10 to 20 days</td></tr>
-        <tr><td>Remote Setup</td><td class="highlight-col"><span class="check">✓ Fully remote available</span></td><td><span class="cross">✗ Often requires visit</span></td></tr>
-        <tr><td>Post-Setup Support</td><td class="highlight-col"><span class="check">✓ Included</span></td><td><span class="cross">✗ Charged separately</span></td></tr>
-        <tr><td>Multiple Jurisdictions</td><td class="highlight-col"><span class="check">✓ 40+ jurisdictions</span></td><td>Limited options</td></tr>
+        <tr><td>Starting Price</td><td class="highlight-col price-cell">AED 4,999</td><td>AED 12,000+</td></tr>
+        <tr><td>Hidden Fees</td><td class="highlight-col"><span class="check">&#10003; None - ever</span></td><td><span class="cross">&#10007; Often added later</span></td></tr>
+        <tr><td>Dedicated Consultant</td><td class="highlight-col"><span class="check">&#10003; One person, start to finish</span></td><td><span class="cross">&#10007; Rotated between agents</span></td></tr>
+        <tr><td>Processing Time</td><td class="highlight-col"><span class="check">&#10003; 5 working days</span></td><td>10-20 days</td></tr>
+        <tr><td>Remote Setup</td><td class="highlight-col"><span class="check">&#10003; Fully remote available</span></td><td><span class="cross">&#10007; Often requires visit</span></td></tr>
+        <tr><td>Post-Setup Support</td><td class="highlight-col"><span class="check">&#10003; Included</span></td><td><span class="cross">&#10007; Charged separately</span></td></tr>
+        <tr><td>Multiple Jurisdictions</td><td class="highlight-col"><span class="check">&#10003; 40+ jurisdictions</span></td><td>Limited options</td></tr>
       </tbody>
     </table>
   </div>
 </section>
 
-<section style="background: var(--light);">
+<section style="background: var(--white);">
   <div class="container">
     <span class="section-label">Common Questions</span>
-    <h2 class="section-title">Pricing Questions Answered</h2>
+    <h2 class="section-title-sm">Pricing Questions Answered</h2>
     <div class="faq-grid">
       <div class="faq-item"><div class="faq-q">What does AED 4,999 actually include?</div><p class="faq-a">The starting price covers your trade license, government registration, establishment card, and PRO services. Visa fees and office space are optional extras quoted separately and shown upfront.</p></div>
-      <div class="faq-item"><div class="faq-q">Are there any hidden fees I should know about?</div><p class="faq-a">No. We give you a full cost breakdown before you commit. The price we quote is the price you pay. Any optional extras like visas or office space are listed separately, never added in surprise.</p></div>
+      <div class="faq-item"><div class="faq-q">Are there any hidden fees I should know about?</div><p class="faq-a">No. We give you a full cost breakdown before you commit. The price we quote is the price you pay. Any optional extras like visas or office space are listed separately - never added in surprise.</p></div>
       <div class="faq-item"><div class="faq-q">Why is the freezone option cheaper than mainland?</div><p class="faq-a">Freezone companies require fewer government approvals and have a simpler registration process. Mainland involves additional DET requirements and is suited for businesses that need direct access to UAE local markets.</p></div>
       <div class="faq-item"><div class="faq-q">Can I upgrade my setup later if my business grows?</div><p class="faq-a">Yes. You can add visa quotas, upgrade your office space, add business activities, or even migrate from freezone to mainland later. Our team advises on the most cost-effective path as you grow.</p></div>
-      <div class="faq-item"><div class="faq-q">Is a cheap setup still a quality setup?</div><p class="faq-a">Absolutely. Lower cost does not mean lower quality. Our pricing reflects efficient processes, direct jurisdiction partnerships, and volume — not shortcuts. Every setup is fully compliant and properly registered.</p></div>
-      <div class="faq-item"><div class="faq-q">What if I am not sure which setup suits me?</div><p class="faq-a">That is exactly what our free consultation is for. Tell us your business activity and goals — we recommend the most suitable and cost-effective option with no pressure to proceed.</p></div>
+      <div class="faq-item"><div class="faq-q">Is a cheap setup still a quality setup?</div><p class="faq-a">Absolutely. Lower cost does not mean lower quality. Our pricing reflects efficient processes, direct jurisdiction partnerships, and volume - not shortcuts. Every setup is fully compliant and properly registered.</p></div>
+      <div class="faq-item"><div class="faq-q">What if I am not sure which setup suits me?</div><p class="faq-a">That is exactly what our free consultation is for. Tell us your business activity and goals - we recommend the most suitable and cost-effective option with no pressure to proceed.</p></div>
+      <div class="faq-item"><div class="faq-q">Why is your price so much lower than everyone else?</div><p class="faq-a">Two reasons. First, we work directly with freezone authorities as registered associates - no middlemen adding their margin. Second, our volume allows us to operate on tighter margins without cutting corners. The license you receive is identical to what an AED 15,000 package elsewhere would produce. The difference is cost structure, not quality.</p></div>
+      <div class="faq-item"><div class="faq-q">What happens after I pay - how do I know the process moves forward?</div><p class="faq-a">You get a dedicated consultant assigned on day one. They share a step-by-step timeline over WhatsApp so you can see exactly where things stand at all times. Most freezone licenses are issued within 5 working days. If anything needs more time, your consultant tells you directly - you are never left waiting without an update.</p></div>
+      <div class="faq-item"><div class="faq-q">Can I open a UAE bank account with this freezone license?</div><p class="faq-a">Yes. A properly issued freezone trade license and establishment card are the documents banks require. We guide you through the bank account process after your license is ready - including which banks work best for your business type and nationality. This is part of our post-setup guidance at no extra charge.</p></div>
+      <div class="faq-item"><div class="faq-q">What is the renewal cost after the first year?</div><p class="faq-a">Renewal is charged by the freezone authority directly and is separate from our service fee. For Meydan, renewal typically falls in a similar range to the first year. We show you the expected renewal cost upfront before you commit - so there are no surprises at the 12-month mark.</p></div>
     </div>
   </div>
 </section>
@@ -351,13 +441,13 @@
   <h2>Start Your Business from AED 4,999</h2>
   <p>Free consultation. Full cost breakdown. No commitment required.</p>
   <div class="final-btns">
-    <a href="https://wa.me/971565876341?text=Hi%2C%20I%20want%20affordable%20business%20setup%20in%20Dubai" class="btn-amber" target="_blank">💰 Get My Free Quote</a>
-    <a href="tel:+971565876341" class="btn-outline">📞 +971 56 587 6341</a>
+    <a href="https://wa.me/971565876341?text=Hi%2C%20I%20want%20affordable%20business%20setup%20in%20Dubai" class="btn-gold-price" target="_blank">Get My Free Quote</a>
+    <a href="tel:+971565876341" class="btn-outline">+971 56 587 6341</a>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 3S Business Services · Sheikh Rashid Tower, 21st Floor, Sheikh Zayed Road, Dubai · <a href="tel:+97143955747">+971 4 395 5747</a> · <a href="mailto:seo@3sbusinessme.com">seo@3sbusinessme.com</a></p>
+  <p>&#169; 2026 3S Business Services &#183; Sheikh Rashid Tower, 21st Floor, Sheikh Zayed Road, Dubai &#183; <a href="tel:+97143955747">+971 4 395 5747</a> &#183; <a href="mailto:seo@3sbusinessme.com">seo@3sbusinessme.com</a></p>
 </footer>
 
 </body>
