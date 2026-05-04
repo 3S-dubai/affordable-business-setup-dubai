@@ -47,24 +47,24 @@
   .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
   .btn-blue { display: inline-flex; align-items: center; justify-content: center; width: 100%; background: var(--blue); color: var(--white); font-family: var(--font-heading); font-weight: 700; font-size: 14px; padding: 13px; border-radius: 5px; text-decoration: none; transition: all 0.2s ease; }
   .btn-blue:hover { background: #1e3d5c; }
-  .btn-wa { width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--green); color: var(--white); font-family: var(--font-heading); font-weight: 700; font-size: 15px; padding: 13px; border-radius: 5px; text-decoration: none; transition: all 0.2s ease; }
-  .btn-wa:hover { background: #1ea952; }
+  .btn-wa { width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--gold); color: var(--white); font-family: var(--font-heading); font-weight: 700; font-size: 13px; padding: 12px; border-radius: 5px; text-decoration: none; transition: all 0.2s ease; white-space: nowrap; }
+  .btn-wa:hover { background: #8a8066; }
 
   /* HERO CARD */
-  .hero-card { background: var(--white); border-radius: 12px; padding: 24px 24px; box-shadow: 0 24px 80px rgba(0,0,0,0.4); animation: fadeUp 0.8s ease 0.2s both; }
-  .card-price-banner { background: linear-gradient(135deg, var(--gold), #8a8066); border-radius: 8px; padding: 12px; text-align: center; margin-bottom: 16px; }
+  .hero-card { background: var(--white); border-radius: 12px; padding: 20px 22px; box-shadow: 0 24px 80px rgba(0,0,0,0.4); animation: fadeUp 0.8s ease 0.2s both; }
+  .card-price-banner { background: linear-gradient(135deg, var(--gold), #8a8066); border-radius: 8px; padding: 10px; text-align: center; margin-bottom: 12px; }
   .card-price-banner .banner-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.8); margin-bottom: 2px; }
   .card-price-banner .banner-price { font-family: var(--font-heading); font-size: 26px; font-weight: 700; color: var(--white); }
   .card-price-banner .banner-note { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 2px; }
-  .hero-card h3 { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--black); margin-bottom: 4px; }
-  .hero-card p { font-size: 12px; color: var(--body); margin-bottom: 14px; }
+  .hero-card h3 { font-family: var(--font-heading); font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 2px; }
+  .hero-card p { font-size: 12px; color: var(--body); margin-bottom: 10px; }
   .form-group { margin-bottom: 10px; }
   .form-group label { display: block; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--body); margin-bottom: 4px; }
   .form-group input, .form-group select { width: 100%; border: 1px solid var(--border); border-radius: 5px; padding: 9px 12px; font-size: 13px; color: var(--black); font-family: var(--font-main); transition: border-color 0.2s; outline: none; background: var(--white); }
   .form-group input:focus, .form-group select:focus { border-color: var(--gold); }
-  .form-submit { width: 100%; background: var(--gold); color: var(--white); font-family: var(--font-heading); font-weight: 700; font-size: 14px; padding: 12px; border: none; border-radius: 5px; cursor: pointer; transition: all 0.2s ease; margin-top: 4px; }
-  .form-submit:hover { background: #8a8066; }
-  .form-divider { text-align: center; font-size: 11px; color: #aaa; margin: 10px 0; position: relative; }
+  .form-submit { width: 100%; background: var(--green); color: var(--white); font-family: var(--font-heading); font-weight: 700; font-size: 14px; padding: 12px; border: none; border-radius: 5px; cursor: pointer; transition: all 0.2s ease; margin-top: 4px; }
+  .form-submit:hover { background: #1ea952; }
+  .form-divider { text-align: center; font-size: 11px; color: #aaa; margin: 8px 0; position: relative; }
   .form-divider::before, .form-divider::after { content: ''; position: absolute; top: 50%; width: 40%; height: 1px; background: var(--border); }
   .form-divider::before { left: 0; } .form-divider::after { right: 0; }
 
@@ -226,7 +226,7 @@
             <option>Not sure - help me choose</option>
           </select>
         </div>
-        <button type="submit" class="form-submit">Connect Us to Assist You &rarr;</button>
+        <button type="submit" class="form-submit">Send Us &rarr;</button>
       </form>
       <div class="form-divider">prefer a call?</div>
       <a href="tel:+971565876341" class="btn-wa">Give Us a Missed Call - We Will Call You Back</a>
