@@ -90,39 +90,39 @@
   }
   html { scroll-behavior: smooth; }
   body { font-family: var(--font-main); color: var(--body); background: var(--white); overflow-x: hidden; font-size: 16px; line-height: 1.7; }
-  .topbar { background: var(--white); border-bottom: 1px solid var(--border); padding: 16px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
-  .topbar img { height: 52px; width: auto; }
-  .topbar-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--white); font-family: var(--font-heading); font-weight: 600; font-size: 14px; padding: 10px 22px; border-radius: 5px; text-decoration: none; transition: background 0.2s ease; }
+  .topbar { background: var(--white); border-bottom: 1px solid var(--border); padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .topbar img { height: 40px; width: auto; }
+  .topbar-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--white); font-family: var(--font-heading); font-weight: 600; font-size: 13px; padding: 8px 18px; border-radius: 5px; text-decoration: none; transition: background 0.2s ease; }
   .topbar-cta:hover { background: #b8923f; }
-  .hero { background: linear-gradient(135deg, var(--navy) 0%, #0a2844 60%, #0d3560 100%); min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding: 24px 40px; }
+  .hero { background: linear-gradient(135deg, var(--navy) 0%, #0a2844 60%, #0d3560 100%); min-height: calc(100vh - 62px); display: flex; align-items: center; position: relative; overflow: hidden; padding: 20px 40px; }
   .hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px); background-size: 72px 72px; pointer-events: none; }
   .hero::after { content: ''; position: absolute; right: -100px; top: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 65%); pointer-events: none; }
-  .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 380px; gap: 48px; align-items: center; position: relative; z-index: 2; }
-  .price-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.4); color: var(--gold); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 8px 18px; border-radius: 3px; margin-bottom: 24px; animation: fadeUp 0.6s ease both; }
-  .hero h1 { font-family: var(--font-heading); font-size: clamp(34px, 5vw, 58px); font-weight: 700; line-height: 1.1; color: var(--white); margin-bottom: 20px; animation: fadeUp 0.7s ease 0.1s both; }
+  .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 360px; gap: 40px; align-items: center; position: relative; z-index: 2; }
+  .price-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.4); color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px; border-radius: 3px; margin-bottom: 14px; animation: fadeUp 0.6s ease both; }
+  .hero h1 { font-family: var(--font-heading); font-size: clamp(28px, 3.8vw, 46px); font-weight: 700; line-height: 1.1; color: var(--white); margin-bottom: 12px; animation: fadeUp 0.7s ease 0.1s both; }
   .hero h1 .price-highlight { color: var(--gold); font-size: 1.1em; }
-  .hero-lead { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 36px; max-width: 520px; animation: fadeUp 0.7s ease 0.2s both; }
-  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeUp 0.7s ease 0.3s both; }
-  .btn-gold-price { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--white); font-family: var(--font-heading); font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 5px; text-decoration: none; transition: all 0.2s ease; }
+  .hero-lead { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 22px; max-width: 520px; animation: fadeUp 0.7s ease 0.2s both; }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; animation: fadeUp 0.7s ease 0.3s both; }
+  .btn-gold-price { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--white); font-family: var(--font-heading); font-weight: 700; font-size: 14px; padding: 11px 22px; border-radius: 5px; text-decoration: none; transition: all 0.2s ease; }
   .btn-gold-price:hover { background: #b8923f; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(201,168,76,0.35); }
-  .btn-outline { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--white); font-family: var(--font-heading); font-weight: 600; font-size: 15px; padding: 14px 28px; border-radius: 5px; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); transition: all 0.2s ease; }
+  .btn-outline { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--white); font-family: var(--font-heading); font-weight: 600; font-size: 14px; padding: 11px 22px; border-radius: 5px; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); transition: all 0.2s ease; }
   .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-  .btn-wa { width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--gold); color: var(--white); font-family: var(--font-heading); font-weight: 700; font-size: 13px; padding: 12px; border-radius: 5px; text-decoration: none; transition: all 0.2s ease; white-space: nowrap; }
+  .btn-wa { width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--gold); color: var(--white); font-family: var(--font-heading); font-weight: 700; font-size: 12px; padding: 10px; border-radius: 5px; text-decoration: none; transition: all 0.2s ease; white-space: nowrap; }
   .btn-wa:hover { background: #b8923f; }
-  .hero-card { background: var(--white); border-radius: 12px; padding: 20px 22px; box-shadow: 0 24px 80px rgba(0,0,0,0.4); animation: fadeUp 0.8s ease 0.2s both; }
-  .card-price-banner { background: linear-gradient(135deg, var(--gold), #b8923f); border-radius: 8px; padding: 10px; text-align: center; margin-bottom: 12px; }
-  .card-price-banner .banner-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.8); margin-bottom: 2px; }
-  .card-price-banner .banner-price { font-family: var(--font-heading); font-size: 26px; font-weight: 700; color: var(--white); white-space: nowrap; }
-  .card-price-banner .banner-note { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 2px; }
-  .hero-card h3 { font-family: var(--font-heading); font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 2px; }
-  .hero-card p { font-size: 12px; color: var(--body); margin-bottom: 10px; }
-  .form-group { margin-bottom: 10px; }
-  .form-group label { display: block; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--body); margin-bottom: 4px; }
-  .form-group input, .form-group select { width: 100%; border: 1px solid var(--border); border-radius: 5px; padding: 9px 12px; font-size: 13px; color: var(--black); font-family: var(--font-main); transition: border-color 0.2s; outline: none; background: var(--white); }
+  .hero-card { background: var(--white); border-radius: 12px; padding: 16px 18px; box-shadow: 0 24px 80px rgba(0,0,0,0.4); animation: fadeUp 0.8s ease 0.2s both; }
+  .card-price-banner { background: linear-gradient(135deg, var(--gold), #b8923f); border-radius: 8px; padding: 8px; text-align: center; margin-bottom: 10px; }
+  .card-price-banner .banner-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.8); margin-bottom: 2px; }
+  .card-price-banner .banner-price { font-family: var(--font-heading); font-size: 22px; font-weight: 700; color: var(--white); white-space: nowrap; }
+  .card-price-banner .banner-note { font-size: 10px; color: rgba(255,255,255,0.7); margin-top: 2px; }
+  .hero-card h3 { font-family: var(--font-heading); font-size: 13px; font-weight: 700; color: var(--black); margin-bottom: 2px; }
+  .hero-card p { font-size: 11px; color: var(--body); margin-bottom: 8px; }
+  .form-group { margin-bottom: 7px; }
+  .form-group label { display: block; font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--body); margin-bottom: 3px; }
+  .form-group input, .form-group select { width: 100%; border: 1px solid var(--border); border-radius: 5px; padding: 7px 10px; font-size: 12px; color: var(--black); font-family: var(--font-main); transition: border-color 0.2s; outline: none; background: var(--white); }
   .form-group input:focus, .form-group select:focus { border-color: var(--gold); }
-  .form-submit { width: 100%; background: var(--green); color: var(--white); font-family: var(--font-heading); font-weight: 700; font-size: 14px; padding: 12px; border: none; border-radius: 5px; cursor: pointer; transition: all 0.2s ease; margin-top: 4px; }
+  .form-submit { width: 100%; background: var(--green); color: var(--white); font-family: var(--font-heading); font-weight: 700; font-size: 13px; padding: 10px; border: none; border-radius: 5px; cursor: pointer; transition: all 0.2s ease; margin-top: 3px; }
   .form-submit:hover { background: #1ea952; }
-  .form-divider { text-align: center; font-size: 11px; color: #aaa; margin: 8px 0; position: relative; }
+  .form-divider { text-align: center; font-size: 10px; color: #aaa; margin: 6px 0; position: relative; }
   .form-divider::before, .form-divider::after { content: ''; position: absolute; top: 50%; width: 40%; height: 1px; background: var(--border); }
   .form-divider::before { left: 0; } .form-divider::after { right: 0; }
   .trust-bar { background: var(--light); border-bottom: 1px solid var(--border); padding: 20px 40px; }
@@ -237,7 +237,7 @@
     <div class="hero-left">
       <div class="price-badge">Affordable Business Setup in Dubai</div>
       <h1>Affordable Business Setup<br>in Dubai from <span class="price-highlight">AED 4,999</span></h1>
-      <p class="hero-lead">Transparent pricing on every setup. Mandatory costs shown upfront. Visa, office, and optional add-ons quoted separately - no surprise charges at any stage.</p>
+      <p class="hero-lead">3S Business Services gives you a complete cost breakdown before you commit. License fees and government charges are listed clearly - no surprises at any stage.</p>
       <div class="hero-btns">
         <a href="https://wa.me/97143955747?text=Hi%2C%20I%20want%20affordable%20business%20setup%20in%20Dubai" class="btn-gold-price" target="_blank">
           <svg width="18" height="18" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.471 2.027 7.773L0 32l8.476-2.001A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm8.27 22.388c-.344.969-2.01 1.856-2.77 1.976-.71.112-1.607.16-2.59-.163a23.7 23.7 0 0 1-2.348-.869c-4.13-1.785-6.832-5.98-7.036-6.254-.204-.274-1.668-2.217-1.668-4.228s1.054-3.003 1.428-3.414c.374-.411.816-.514 1.088-.514.272 0 .544.003.782.014.25.012.587-.095.918.7.344.831 1.168 2.842 1.27 3.047.102.204.17.443.034.716-.136.272-.204.443-.408.68-.204.238-.43.532-.613.714-.204.204-.416.425-.179.834.238.408 1.056 1.742 2.267 2.822 1.558 1.389 2.872 1.818 3.28 2.022.408.204.646.17.884-.102.238-.272 1.02-1.19 1.293-1.598.272-.408.544-.34.918-.204.374.136 2.38 1.122 2.788 1.326.408.204.68.306.782.476.102.17.102.986-.242 1.956z"/></svg>
